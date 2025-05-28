@@ -88,8 +88,17 @@ module.exports = {
             confirm: 10
         },
         ton: {
-            rpc: "https://toncenter.com/api/v2/jsonRPC",
-            confirm: 10
+            rpc: [
+                {type:"toncenter",version:2},
+                {type:"toncenter",version:3},
+                {type:"quicknode",version:2},
+                {type:"chainstack",version:2},
+                {type:"chainstack",version:3},
+                {type:"getblock",version:2},
+                {type:"getblock",version:3},
+            ],
+            confirm: 10,
+            min_healthy_cnt: 3,
         },
         wemix: {
             rpc: "https://api.wemix.com",
@@ -109,10 +118,10 @@ module.exports = {
     },
     VALIDATOR_MONITOR: {
         ozys: {
-            monitor: "https://va.bridge.orbitchain.io/governance/report",
-            orbit: "https://api.bridge.orbitchain.io",
-            validator: "https://va.bridge.orbitchain.io",
-            bible: "https://bridge.orbitchain.io/open",
+            monitor: "https://va.orbitbridge.io/governance/report",
+            orbit: "https://api.orbitbridge.io",
+            validator: "https://va.orbitcbridge.io",
+            bible: "https://open.orbitbridge.io/open",
             interval: 60 * 1000,
         },
     },
